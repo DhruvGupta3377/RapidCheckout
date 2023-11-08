@@ -12,16 +12,28 @@
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.16.0"
+    "react-qr-barcode-scanner": "^1.0.6",
+    "react-qr-reader": "^3.0.0-beta-1",
+    "react-router-dom": "^6.18.0"
   },
   "devDependencies": {
-    "@types/react": "^18.2.15",
-    "@types/react-dom": "^18.2.7",
-    "@vitejs/plugin-react-swc": "^3.3.2",
-    "eslint": "^8.45.0",
+    "@types/react": "^18.2.37",
+    "@types/react-dom": "^18.2.15",
+    "@vitejs/plugin-react-swc": "^3.4.1",
+    "eslint": "^8.53.0",
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-react-refresh": "^0.4.3",
-    "vite": "^4.4.5"
-  }
+    "eslint-plugin-react-refresh": "^0.4.4",
+    "html5-qrcode": "^2.3.8",
+    "vite": "^4.5.0"
+  },
+  "rules": {
+    "no-unused-vars": "off"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }

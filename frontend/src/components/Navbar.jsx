@@ -41,6 +41,11 @@ const Navbar = () => {
                 Profile
               </Link>
             </li>
+            <li className="nav-item">
+            <Link className="nav-link" to="/barcode">
+              BarcodeSearch
+            </Link>
+          </li>
           </ul>
         </div>
       </nav>

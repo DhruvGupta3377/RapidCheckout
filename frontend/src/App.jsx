@@ -8,6 +8,8 @@ import ErrorPage from "./pages/ErrorPage"
 import ProductsInfo from "./pages/ProductsInfo"
 import SignUp from "./pages/SignUp"
 import SignIn from "./pages/SignIn"
+// import BarcodeSearch from "./pages/BarcodeSearch"
+import BarcodeScanner from "./pages/BarcodeScanner"
 
 const router = createBrowserRouter([
   {path : '/', element : <RootWrapper/>, children:[
@@ -17,7 +19,8 @@ const router = createBrowserRouter([
     {path : '/cart', element : <Cart/>},
     {path : '/doday', element : <DealsOfTheDay/>},
     {path : '/profile', element : <Profile/>},
-    {path : '/products/:id', element :<ProductsInfo/>}
+    {path : '/products/:id', element :<ProductsInfo/>},
+    {path : '/barcode', element: <BarcodeScanner/>}
   ],
   errorElement: <ErrorPage/>
 }
