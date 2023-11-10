@@ -1,10 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "../../styles/card.css";
 
 const Item = (props) => {
   const addItemHandler = () => {
-    event.preventDefault()
-    const itemid = props.info.pk
+    event.preventDefault();
+    const itemid = props.info.pk;
     const apiUrl = "http://127.0.0.1:8000/api/setcartitems/";
     console.log("cart shit");
     const cartitem = {
@@ -30,25 +31,28 @@ const Item = (props) => {
         console.error("Error fetching data:", error);
       }
     }
-    
+
     // Call the async function
     postData();
-    
   };
 
   return (
     <>
-      <img src={props.info.image}></img>
-      id = {props.info.pk}
-      <br />
-      name = {props.info.name}
-      <br />
-      price = {props.info.price}
-      <br />
-      <Link to={`/products/${props.info.pk}`}> View Item </Link> <br />
-      <Link onClick={addItemHandler}> Add Item </Link>
-      <br />
-      <br />
+      <div className="card">
+        <img className="card-img" src={`${props.info.imagelink}`} />
+        id = {props.info.pk}
+        <br />
+        name = {props.info.name}
+        <br />
+        price = {props.info.price}
+        <br />
+        <Link to={`/products/${props.info.pk}`}> View Item </Link> <br />
+        <button type="button" className="btn bg-cart" onClick={addItemHandler}>
+          <i className="fa fa-cart-plus mr-2"></i> Add to cart
+        </button>
+        <br />
+        <br />
+      </div>
     </>
   );
 };

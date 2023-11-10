@@ -7,3 +7,5 @@ class ProductInfo (models.Model):
     left = models.IntegerField(null = False)
     description = models.CharField(max_length = 200)
     imagelink = models.CharField(max_length=200)
+    barcode = models.CharField(max_length = 200)
+    location = models.CharField(max_length = 20)
