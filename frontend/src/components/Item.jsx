@@ -1,12 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../../styles/card.css";
+import BASE_URL from "../../constant";
 
 const Item = (props) => {
   const addItemHandler = () => {
     event.preventDefault();
     const itemid = props.info.pk;
-    const apiUrl = "http://127.0.0.1:8000/api/setcartitems/";
+    const apiUrl = `${BASE_URL}/api/setcartitems/`;
     console.log("cart shit");
     const cartitem = {
       itemid: itemid,

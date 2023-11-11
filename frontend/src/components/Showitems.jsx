@@ -2,6 +2,7 @@ import React from "react";
 import Item from "./Item";
 import { useState, useEffect } from "react";
 import "../../styles/card.css";
+import BASE_URL from "../../constant";
 
 const Showitems = () => {
   // const items = [
@@ -31,7 +32,7 @@ const Showitems = () => {
 
   const [items, setItems] = useState([]);
   useEffect(() => {
-    const apiUrl = "http://127.0.0.1:8000/api/getallitems/";
+    const apiUrl = `${BASE_URL}/api/getallitems/`;
     console.log("fetching");
     fetch(apiUrl)
       .then((response) => {
