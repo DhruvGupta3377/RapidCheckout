@@ -20,3 +20,4 @@ def removeitemfromcart(item_id):
     d = carts.update_one({"user_id" : 123123}, {"$pull" : {"items" : {'itemid' : item_id}}})
     print("donme")
 # print(getitemsfromcart(123123))
+
