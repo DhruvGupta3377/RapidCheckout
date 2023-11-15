@@ -7,4 +7,6 @@ urlpatterns = [
     path("getcartitems/",getcartitems, name = "get_cart_items"),
     path("getitembyid/",getitembyid, name = "get_item_by_id"),
     path("removecartitem/",removecartitem, name = "remove_cart_item"),
+    path("searchbarcode/", getcartitembybarcode, name = "get_cart_item_by_barcode"),
+    
 ]
