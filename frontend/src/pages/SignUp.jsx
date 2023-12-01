@@ -32,10 +32,11 @@ const SignUp = () => {
 
   return (
     <>
-      SignUp
-      <br />
-      User Name
-      <br />
+    <div className="div1">
+    
+    <br />
+    User Name
+    <br />
       <input type="text" ref={refUser}></input>
       <br />
       Password
@@ -44,9 +45,11 @@ const SignUp = () => {
       <br />
       <Link to="/signin">Already have an Account ?</Link>
       <br />
-      <button onClick={signupSubmitHandler}> SUBMIT </button>
-    </>
-  );
-};
+      <button onClick={signupSubmitHandler}> SignUp </button>
+      </div>
+      </>
+      );
+    };
 
-export default SignUp;
+    export default SignUp;
+    

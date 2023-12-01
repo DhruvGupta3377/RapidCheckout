@@ -5,7 +5,7 @@ from rest_framework.authentication import TokenAuthentication
 from rest_framework.permissions import IsAuthenticated
 from .models import *
 from .serializer import *
-from .mongoDB import additemstocart,getitemsfromcart,removeitemfromcart
+from .mongoDB import additemstocart,getitemsfromcart,removeitemfromcart,removeallitemsfromcart
 
 
 @api_view(['GET'])
@@ -29,7 +29,14 @@ def getcartitems(request):
     user_id = request.data
     cartitems = getitemsfromcart(123123)
     serializer = cartSerializer(cartitems["items"], many = True)
-    return Response(serializer.data)
+    # print(cartitems["items"])
+    # return Response(serializer.data)
+    iteminfo = []
+    for i in cartitems["items"]:
+        print(i["itemid"])
+        serializer = productSerializer(ProductInfo.objects.get(pk = i["itemid"]))
+        iteminfo.append(serializer.data)
+    return Response(iteminfo)
 
 @api_view(['POST'])
 def getitembyid(request):
@@ -51,3 +58,11 @@ def getcartitembybarcode (request):
     # print(serializer.data)
     return Response (serializer.data)
     # return Response("hello")
+
+@api_view(['POST'])
+def removeallcartitems (request):
+    print(request.data["userid"])
+    userid = int(request.data["userid"])
+    removeallitemsfromcart(userid)
+    print("aande")
+    return Response("ok")

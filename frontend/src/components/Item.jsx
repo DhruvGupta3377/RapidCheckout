@@ -39,16 +39,18 @@ const Item = (props) => {
 
   return (
     <>
-      <div className="card">
-        <img className="card-img" src={`${props.info.imagelink}`} />
-        id = {props.info.pk}
+      <img className="card-img-top" src={`${props.info.imagelink}`} />
+      <div className="card-body">
+        <h4>{props.info.name}</h4>
+        ID = {props.info.pk}
         <br />
-        name = {props.info.name}
+        Rs {props.info.price}/-
         <br />
-        price = {props.info.price}
-        <br />
-        <Link to={`/products/${props.info.pk}`}> View Item </Link> <br />
-        <button type="button" className="btn bg-cart" onClick={addItemHandler}>
+        <button
+          type="button"
+          className="btn btn-primary"
+          onClick={addItemHandler}
+        >
           <i className="fa fa-cart-plus mr-2"></i> Add to cart
         </button>
         <br />

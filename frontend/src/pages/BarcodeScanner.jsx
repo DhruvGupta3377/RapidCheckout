@@ -27,7 +27,9 @@ const BarcodeScanner = () => {
     <>
     <div id="reader" width="600px"></div>
     {data}<br/>
-    <Link to="/search-barcode/12345">search</Link>
+    <button id="checkoutbtn">
+    <Link className = "headerlink"to="/search-barcode/12345">search</Link>
+    </button>
     </>
     );
 };

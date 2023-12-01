@@ -16,19 +16,21 @@ const SignIn = () => {
 
   return (
     <>
-      Sign in
-      <br />
+    <div className="div1">
+    
+    <br />
       User Name
       <br />
       <input type="text" onChange={userNameHandler}></input>
       <br />
       Password
       <br />
-      <input type="text" onChange={userPasswordHandler}></input>
+      <input type="password" onChange={userPasswordHandler}></input>
       <br />
       <Link to="/signup">Don't have an account ?</Link>
       <br/>
-      <button> SUBMIT </button>
+      <button> <Link to ='/'> SignIn </Link></button>
+      </div>
     </>
   );
 };

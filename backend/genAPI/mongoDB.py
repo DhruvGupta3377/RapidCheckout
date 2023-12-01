@@ -1,6 +1,6 @@
 from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi
-uri = "mongodb://localhost:27017"
+uri = "mongodb://localhost:27017/"
 client = MongoClient(uri, server_api=ServerApi('1'))
 cart = {"item_id" : 123}
 database = client.RapidCheckout
@@ -14,6 +14,7 @@ def additemstocart(cart):
         carts.update_one({"user_id" : 123123},  {"$addToSet": {"items": cart["items"][0]}})
 
 def getitemsfromcart(user_id):
+    # print(carts.find_one({"user_id" : user_id}))
     return (carts.find_one({"user_id" : user_id}))
     
 def removeitemfromcart(item_id):
@@ -21,3 +22,5 @@ def removeitemfromcart(item_id):
     print("donme")
 # print(getitemsfromcart(123123))
 
+def removeallitemsfromcart(user_id):
+    carts.update_one({"user_id": user_id}, {"$set": {"items": []}})

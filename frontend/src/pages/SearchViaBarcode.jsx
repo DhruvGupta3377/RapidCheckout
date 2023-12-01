@@ -31,8 +31,10 @@ const SearchViaBarcode = () => {
 
 
   return <div>
+  <div className="card">
   <Item info={data} />
   </div>;
+  </div>
 };
 
 export default SearchViaBarcode;
