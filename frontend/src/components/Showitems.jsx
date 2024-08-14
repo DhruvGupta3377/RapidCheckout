@@ -5,9 +5,6 @@ import "../../styles/card.css";
 import BASE_URL from "../../constant";
 
 const Showitems = () => {
-
-  
-
   const [items, setItems] = useState([]);
   useEffect(() => {
     const apiUrl = `${BASE_URL}/api/getallitems/`;
@@ -28,7 +25,7 @@ const Showitems = () => {
   }, []);
 
   return (
-    <section>
+    <section style={{justifyContent: 'flex-start'}}>
     {items.map((item) => {
       return (
         <div className="card" key={item.pk}>
