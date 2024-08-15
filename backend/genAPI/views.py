@@ -6,7 +6,7 @@ from rest_framework.permissions import IsAuthenticated
 from .models import *
 from .serializer import *
 from .mongoDB import additemstocart,getitemsfromcart,removeitemfromcart,removeallitemsfromcart
-
+from django.http import JsonResponse
 
 @api_view(['GET'])
 # @authentication_classes([TokenAuthentication])
@@ -66,3 +66,23 @@ def removeallcartitems (request):
     removeallitemsfromcart(userid)
     print("aande")
     return Response("ok")
+
+
+from .recomModel import RecommendationModel
+@api_view(['GET'])
+def get_homepage_items(request):
+    all_items = ProductInfo.objects.all()
+    product_id = all_items.first().id if all_items.exists() else None
+    
+    recommended_items = []
+    if product_id:
+        model = RecommendationModel()
+        recommended_items = model.get_recommendations(product_id)
+    
+    items_data = list(all_items.values())
+    recommended_data = recommended_items
+    
+    return JsonResponse({
+        'items': items_data,
+        'recommended_items': recommended_data
+    })
