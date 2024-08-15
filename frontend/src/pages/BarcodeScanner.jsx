@@ -26,10 +26,12 @@ const BarcodeScanner = () => {
   return (
     <>
     <div id="reader" width="600px"></div>
-    {data}<br/>
-    <button id="checkoutbtn">
-    <Link className = "headerlink"to="/search-barcode/12345">search</Link>
-    </button>
+    <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', marginTop: '20px'}}>
+      {data}<br/>
+      <button id="checkoutbtn">
+      <Link className = "headerlink"to="/search-barcode/12345">search</Link>
+      </button>
+    </div>
     </>
     );
 };

@@ -5,28 +5,27 @@ import "../assets/asta.jpeg"
 const Navbar = () => {
   return (
     <>
-    <header>
-    <img src="https://i.postimg.cc/wjSrzSX7/logo.png" alt="Rapid Checkout" align = "left"/>
-    <Link className="headerlink" to="/">
-    <h1 align ="center">
-    RapidCheckout
-    </h1>
-    </Link>
-    </header>
-      <nav>
-        <Link className="nav-link" to="/">
-          Home
+    <div style={{height: '100px'}}>
+      <div style={{height: '100%', display: 'flex', justifyContent: 'flex-start', alignItems: 'center', borderBottom: '1px solid #e2e2e2'}}>
+        <Link className="headerlink" to="/">
+          <img src="logo.png" alt="Rapid Checkout" align = "left" style={{height: '250px'}}/>
         </Link>
-        <Link className="nav-link" to="/cart">
-          Cart
-        </Link>
-        <Link className="nav-link" to="/barcode">
-        BarcodeSearch
-        </Link>
-        <Link className="nav-link" to="/aboutus">
-          About Us
-        </Link>
-      </nav>
+        <div style={{marginLeft: 'auto'}}>
+            <Link className="nav-link" to="/" style={{color: 'black'}}>
+              Home
+            </Link>
+            <Link className="nav-link" to="/cart" style={{color: 'black'}}>
+              Cart
+            </Link>
+            <Link className="nav-link" to="/barcode" style={{color: 'black'}}>
+            BarcodeSearch
+            </Link>
+            <Link className="nav-link" to="/aboutus" style={{color: 'black'}}>
+              About Us
+            </Link>
+        </div>
+      </div>
+    </div>
     </>
   );
 };

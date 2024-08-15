@@ -64,14 +64,15 @@ padding-bottom:5px;
     overflow: hidden;
     margin: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out;
+    /* transition: transform 0.3s ease-in-out; */
 }
 
-.card:hover {
+/* .card:hover {
     transform: scale(1.05);
-}
+} */
 
 .card-img-top {
+    transition: transform 0.3s ease-in-out;
     width: 100%;
     height: 200px;
     object-fit: contain;
@@ -83,6 +84,10 @@ padding-bottom:5px;
     /* padding: 10px; */
     margin-top : 10px;
     /* margin :10px */
+}
+
+.card-img-top:hover {
+    transform: scale(1.1);
 }
 
 .card-body {
@@ -119,9 +124,9 @@ section {
     font-weight: bold;
     text-align: center;
     text-decoration: none;
-    background-color: #FA991C;
+    background-color: #1584f3;
     color: #fff;
-    border: 1px solid #de8614;
+    border: 1px solid #077cf1;
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s ease-in-out;
@@ -137,9 +142,9 @@ section {
     font-weight: bold;
     text-align: center;
     text-decoration: none;
-    background-color: #FA991C;
+    background-color: #1584f3;
     color: #fff;
-    border: 1px solid #de8614;
+    border: 1px solid #077cf1;
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s ease-in-out;
@@ -151,7 +156,7 @@ section {
 }
 
 .btn-primary:hover {
-    background-color: #de8614;
+    background-color: #077cf1;
 }
 
 h1 {

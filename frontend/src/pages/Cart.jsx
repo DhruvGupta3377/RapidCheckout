@@ -88,7 +88,7 @@ const Cart = () => {
           );
         })}
       </section>
-      <div className="div1">
+      <div className="div1" style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
       <button className="btn btn-primary" id="checkoutbtn" onClick={openModal}>
       CheckOut
       </button>

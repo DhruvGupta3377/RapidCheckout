@@ -12,6 +12,8 @@ const Item = (props) => {
     const cartitem = {
       itemid: itemid,
       amount: 1,
+      rating: rating,
+      category: category,
     };
     async function postData() {
       try {
